@@ -1,0 +1,184 @@
+{
+  "project_info": {
+    "project_number": "1084698318081",
+    "project_id": "ekober-ts",
+    "storage_bucket": "ekober-ts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084698318081:android:69df53bc3a7beb8a837700",
+        "android_client_info": {
+          "package_name": "com.AP_Schemes.Andhra_Pradesh_Rice_Card"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiuR5QAKs2jnio_9zbf7Xbl96stFjcJlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084698318081:android:63ddec42987b71a1837700",
+        "android_client_info": {
+          "package_name": "com.AP_sand.booking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiuR5QAKs2jnio_9zbf7Xbl96stFjcJlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084698318081:android:b37e6e0af7cef10c837700",
+        "android_client_info": {
+          "package_name": "com.ap_app_govt.schemes_services"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiuR5QAKs2jnio_9zbf7Xbl96stFjcJlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084698318081:android:111cc5c91cab142c837700",
+        "android_client_info": {
+          "package_name": "com.bihar.land_records"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiuR5QAKs2jnio_9zbf7Xbl96stFjcJlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084698318081:android:9b30282328b43440837700",
+        "android_client_info": {
+          "package_name": "com.karnataka_bhoomi.land_records"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiuR5QAKs2jnio_9zbf7Xbl96stFjcJlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084698318081:android:81cbc9f0e5db7811837700",
+        "android_client_info": {
+          "package_name": "com.telangana.e_kuber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiuR5QAKs2jnio_9zbf7Xbl96stFjcJlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084698318081-nifuef0sie1bhbil50f9b5aa9q37vavb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
