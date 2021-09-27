@@ -29,7 +29,6 @@
             >
 
             <com.facebook.ads.MediaView
-                android:visibility="gone"
                 android:id="@+id/native_ad_icon"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
@@ -82,7 +81,6 @@
 
 
         <com.facebook.ads.MediaView
-            android:visibility="gone"
             android:id="@+id/native_ad_media"
             android:layout_width="match_parent"
             android:layout_height="150dp"
