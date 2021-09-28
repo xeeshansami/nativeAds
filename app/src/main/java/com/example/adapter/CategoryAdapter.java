@@ -49,7 +49,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if (viewHolder.getItemViewType() == VIEW_TYPE_ITEM) {
             final ItemRowHolder holder = (ItemRowHolder) viewHolder;
             final ItemCategory singleItem = dataList.get(position);
-
             holder.text.setText(singleItem.getCategoryName());
             Picasso.get().load(singleItem.getCategoryImage()).placeholder(R.drawable.placeholder).into(holder.image);
             holder.lyt_parent.setOnClickListener(new View.OnClickListener() {

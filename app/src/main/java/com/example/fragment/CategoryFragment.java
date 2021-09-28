@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,21 +61,9 @@ public class CategoryFragment extends Fragment {
         lyt_not_found = rootView.findViewById(R.id.lyt_not_found);
         progressBar = rootView.findViewById(R.id.progressBar);
         recyclerView = rootView.findViewById(R.id.vertical_courses_list);
-        recyclerView.setHasFixedSize(true);
-        GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 3);
-        recyclerView.setLayoutManager(layoutManager);
 
-        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                switch (adapter.getItemViewType(position)) {
-                    case 0:
-                        return 3;
-                    default:
-                        return 1;
-                }
-            }
-        });
+
+
 
 
         if (NetworkUtils.isConnected(getActivity())) {
@@ -83,22 +72,6 @@ public class CategoryFragment extends Fragment {
             Toast.makeText(getActivity(), getString(R.string.conne_msg1), Toast.LENGTH_SHORT).show();
         }
 
-        recyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(layoutManager) {
-            @Override
-            public void onLoadMore(int page, int totalItemsCount) {
-                if (!isOver) {
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            pageIndex++;
-                            getCategory();
-                        }
-                    }, 1000);
-                } else {
-                    adapter.hideHeader();
-                }
-            }
-        });
         return rootView;
     }
 
@@ -170,8 +143,39 @@ public class CategoryFragment extends Fragment {
             lyt_not_found.setVisibility(View.GONE);
             if (isFirst) {
                 isFirst = false;
+                recyclerView.setHasFixedSize(true);
+                GridLayoutManager layoutManager = new  GridLayoutManager(getActivity(), 3);
+                recyclerView.setLayoutManager(layoutManager);
+//                layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//                    @Override
+//                    public int getSpanSize(int position) {
+//                        switch (adapter.getItemViewType(position)) {
+//                            case 0:
+//                                return 3;
+//                            default:
+//                                return 3;
+//                        }
+//                    }
+//                });
+//                recyclerView.addOnScrollListener(new EndlessRecyclerViewScrollListener(layoutManager) {
+//                    @Override
+//                    public void onLoadMore(int page, int totalItemsCount) {
+//                        if (!isOver) {
+//                            new Handler().postDelayed(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    pageIndex++;
+//                                    getCategory();
+//                                }
+//                            }, 1000);
+//                        } else {
+//                            adapter.hideHeader();
+//                        }
+//                    }
+//                });
                 adapter = new CategoryAdapter(getActivity(), mListItem);
                 recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             } else {
                 adapter.notifyDataSetChanged();
             }
