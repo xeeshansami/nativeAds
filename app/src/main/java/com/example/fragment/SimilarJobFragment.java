@@ -1,5 +1,6 @@
 package com.example.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bihar.land_records.JobDetailsActivity;
 import com.bihar.land_records.R;
 import com.example.adapter.JobAdapter;
+import com.example.item.ItemCategory;
 import com.example.item.ItemJob;
 import com.example.util.API;
 import com.example.util.Constant;
@@ -65,6 +67,7 @@ public class SimilarJobFragment extends Fragment {
         return f;
     }
 
+    @SuppressLint("MissingPermission")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -201,11 +204,21 @@ public class SimilarJobFragment extends Fragment {
             adapter.setOnItemClickListener(new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String jobId = mListItem.get(position).getId();
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId = itemJob.getId();
                     Intent intent = new Intent(getActivity(), JobDetailsActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra("Id", jobId);
                     startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
                 }
             });
 

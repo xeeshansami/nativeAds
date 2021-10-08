@@ -20,6 +20,7 @@ import com.bihar.land_records.EditJobActivity;
 import com.bihar.land_records.MyApplication;
 import com.bihar.land_records.R;
 import com.example.adapter.JobProviderAdapter;
+import com.example.item.ItemCategory;
 import com.example.item.ItemJob;
 import com.example.util.API;
 import com.example.util.Constant;
@@ -167,10 +168,20 @@ public class JobProviderFragment extends Fragment {
             adapter.setOnItemClickListener(new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String jobId = mListItem.get(position).getId();
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId = itemJob.getId();
                     Intent intent = new Intent(getActivity(), EditJobActivity.class);
                     intent.putExtra("Id", jobId);
                     startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
                 }
             });
         }

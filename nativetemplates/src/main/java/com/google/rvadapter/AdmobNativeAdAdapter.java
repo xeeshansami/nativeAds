@@ -28,7 +28,7 @@ public class AdmobNativeAdAdapter extends RecyclerViewAdapterWrapper {
     private static final int TYPE_FB_NATIVE_ADS = 900;
     private static final int DEFAULT_AD_ITEM_INTERVAL = 4;
 
-    private final Param mParam;
+    public final Param mParam;
 
     private AdmobNativeAdAdapter(Param param) {
         super(param.adapter);

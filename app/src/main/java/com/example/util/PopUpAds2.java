@@ -4,24 +4,24 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-
+import com.example.item.ItemCategory;
 import com.example.item.ItemJob;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.CacheFlag;
 import com.facebook.ads.InterstitialAdListener;
 import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.ixidev.gdpr.GDPRChecker;
 
-public class PopUpAds {
+import androidx.annotation.NonNull;
+
+public class PopUpAds2 {
     private InterstitialAd mInterstitialAd;
     private final String TAG = "myapp";
-    public static void showInterstitialAds(final Context context, final int adapterPosition, final RvOnClickListener clickListener, ItemJob singleItem) {
+    public static void showInterstitialAds(final Context context, final int adapterPosition, final RvOnClickListener clickListener, ItemCategory singleItem) {
         if (Constant.isInterstitial) {
             Constant.AD_COUNT += 1;
             if (Constant.AD_COUNT == Constant.AD_COUNT_SHOW) {

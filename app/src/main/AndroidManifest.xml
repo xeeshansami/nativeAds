@@ -22,7 +22,7 @@
         tools:replace="android:allowBackup"
         tools:targetApi="n">
         <activity
-            android:name="com.bihar.land_records.SplashActivity"
+            android:name="com.bihar.land_records.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,9 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.bihar.land_records.MainActivity"
-            android:windowSoftInputMode="adjustPan" />
+     <!--   <activity
+            android:name="com.bihar.land_records.SplashActivity"
+            android:windowSoftInputMode="adjustPan" />-->
         <activity android:name="com.bihar.land_records.JobDetailsActivity" />
         <activity android:name="com.bihar.land_records.SearchActivity" />
         <activity android:name="com.bihar.land_records.FilterSearchResultActivity" />

@@ -1,5 +1,6 @@
 package com.example.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import com.bihar.land_records.MainActivity;
 import com.bihar.land_records.R;
 import com.example.adapter.CategoryAdapter;
 import com.example.item.ItemCategory;
+import com.example.item.ItemJob;
 import com.example.util.API;
 import com.example.util.Constant;
 import com.example.util.EndlessRecyclerViewScrollListener;
@@ -53,6 +55,7 @@ public class CategoryFragment extends Fragment {
     boolean isFirst = true, isOver = false;
     private int pageIndex = 1;
 
+    @SuppressLint("MissingPermission")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -183,8 +186,18 @@ public class CategoryFragment extends Fragment {
             adapter.setOnItemClickListener(new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String categoryName = mListItem.get(position).getCategoryName();
-                    String categoryId = String.valueOf(mListItem.get(position).getCategoryId());
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+                    String categoryName = itemJob.getCategoryName();
+                    String categoryId = String.valueOf(itemJob.getCategoryId());
                     Bundle bundle = new Bundle();
                     bundle.putString("categoryId", categoryId);
 

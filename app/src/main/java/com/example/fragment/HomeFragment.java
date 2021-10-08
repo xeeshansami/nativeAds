@@ -1,5 +1,6 @@
 package com.example.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -73,6 +74,7 @@ public class HomeFragment extends Fragment implements NativeAdsManager.Listener 
     EditText edtSearch;
     NativeAdsManager nativeAdsManager;
 
+    @SuppressLint("MissingPermission")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -308,6 +310,19 @@ public class HomeFragment extends Fragment implements NativeAdsManager.Listener 
                     ft.commit();
                     ((MainActivity) requireActivity()).setToolbarTitle(categoryName);
                 }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId = itemJob.getId();
+                    Intent intent = new Intent(getActivity(), JobDetailsActivity.class);
+                    intent.putExtra("Id", jobId);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
+                }
             });
 
         } else {
@@ -315,16 +330,44 @@ public class HomeFragment extends Fragment implements NativeAdsManager.Listener 
         }
 
         if (!jobRecentList.isEmpty()) {
-            recentJobAdapter = new HomeJobAdapter(getActivity(), jobRecentList,nativeAdsManager);
+            recentJobAdapter = new HomeJobAdapter(getActivity(), jobRecentList, nativeAdsManager, new RvOnClickListener() {
+                @Override
+                public void onItemClick(int position) {
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId = itemJob.getId();
+                    Intent intent = new Intent(getActivity(), JobDetailsActivity.class);
+                    intent.putExtra("Id", jobId);
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
+                }
+            });
             rvRecentJob.setAdapter(recentJobAdapter);
 
             recentJobAdapter.setOnItemClickListener(new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String jobId = jobRecentList.get(position).getId();
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId = itemJob.getId();
                     Intent intent = new Intent(getActivity(), JobDetailsActivity.class);
                     intent.putExtra("Id", jobId);
                     startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
                 }
             });
 
@@ -333,20 +376,29 @@ public class HomeFragment extends Fragment implements NativeAdsManager.Listener 
         }
 
         if (!jobLatestList.isEmpty()) {
-            latestAdapter = new HomeJobAdapter(getActivity(), jobLatestList,nativeAdsManager);
-            AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-6022888990284589/3695725593", latestAdapter,
-                    "small").adItemInterval(3).build();
-            rvLatestJob.setAdapter(admobNativeAdAdapter);
-            rvLatestJob.setHasFixedSize(true);
-            latestAdapter.setOnItemClickListener(new RvOnClickListener() {
+            latestAdapter = new HomeJobAdapter(getActivity(), jobLatestList, nativeAdsManager, new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String jobId = jobLatestList.get(position).getId();
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId =itemJob.getId();
                     Intent intent = new Intent(getActivity(), JobDetailsActivity.class);
                     intent.putExtra("Id", jobId);
                     startActivity(intent);
                 }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
+                }
             });
+            AdmobNativeAdAdapter admobNativeAdAdapter = AdmobNativeAdAdapter.Builder.with("ca-app-pub-6022888990284589/3695725593", latestAdapter,
+                    "small").adItemInterval(3).build();
+            rvLatestJob.setAdapter(admobNativeAdAdapter);
+            rvLatestJob.setHasFixedSize(true);
         } else {
             lytLatest.setVisibility(View.GONE);
         }

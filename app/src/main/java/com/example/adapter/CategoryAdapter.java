@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bihar.land_records.R;
 import com.example.item.ItemCategory;
 import com.example.util.PopUpAds;
+import com.example.util.PopUpAds2;
 import com.example.util.RvOnClickListener;
 import com.squareup.picasso.Picasso;
 
@@ -54,7 +55,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             holder.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener);
+                    PopUpAds2.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener, singleItem);
                 }
             });
         }

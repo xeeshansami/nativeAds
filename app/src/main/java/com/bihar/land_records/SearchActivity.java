@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adapter.JobAdapter;
+import com.example.item.ItemCategory;
 import com.example.item.ItemJob;
 import com.example.util.API;
 import com.example.util.BannerAds;
@@ -205,10 +206,20 @@ public class SearchActivity extends AppCompatActivity {
             adapter.setOnItemClickListener(new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String jobId = mListItem.get(position).getId();
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId =itemJob.getId();
                     Intent intent = new Intent(SearchActivity.this, JobDetailsActivity.class);
                     intent.putExtra("Id", jobId);
                     startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
                 }
             });
 

@@ -26,9 +26,7 @@ import com.example.util.PopUpAds;
 import com.example.util.RvOnClickListener;
 import com.example.util.SaveClickListener;
 import com.example.util.SaveJob;
-import com.facebook.ads.AdOptionsView;
 import com.facebook.ads.NativeAd;
-import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdsManager;
 import com.squareup.picasso.Picasso;
 
@@ -47,9 +45,10 @@ public class HomeJobAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private static final int AD_frequency = 4;
     private static final int Post_type = 0;
     private static final int AD_type = 1;
-    public HomeJobAdapter(Context context, ArrayList<ItemJob> dataList, NativeAdsManager nativeAdsManager) {
+    public HomeJobAdapter(Context context, ArrayList<ItemJob> dataList, NativeAdsManager nativeAdsManager,RvOnClickListener clickListener) {
         this.dataList = dataList;
         this.mContext = context;
+        this.clickListener = clickListener;
         this.nativeAdsManager = nativeAdsManager;
         mAdItems = new ArrayList<>();
     }
@@ -119,7 +118,8 @@ public class HomeJobAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             holder.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener);
+                    PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener, singleItem);
+                    clickListener.onItemClick(position,singleItem);
                 }
             });
 

@@ -65,7 +65,7 @@ public class JobAppliedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             holder.lyt_parent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener);
+                    PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener, singleItem);
                 }
             });
 

@@ -24,15 +24,7 @@ import com.example.util.PopUpAds;
 import com.example.util.RvOnClickListener;
 import com.example.util.SaveClickListener;
 import com.example.util.SaveJob;
-import com.google.android.ads.nativetemplates.NativeTemplateStyle;
-import com.google.android.ads.nativetemplates.TemplateView;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.formats.UnifiedNativeAd;
-import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
@@ -90,7 +82,7 @@ public class JobDetailAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 holder.lyt_parent.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener);
+                        PopUpAds.showInterstitialAds(mContext, holder.getAdapterPosition(), clickListener, singleItem);
                     }
                 });
 

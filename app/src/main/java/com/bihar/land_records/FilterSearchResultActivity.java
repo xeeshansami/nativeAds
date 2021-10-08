@@ -1,5 +1,6 @@
 package com.bihar.land_records;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.adapter.JobAdapter;
+import com.example.item.ItemCategory;
 import com.example.item.ItemJob;
 import com.example.util.API;
 import com.example.util.BannerAds;
@@ -62,6 +64,7 @@ public class FilterSearchResultActivity extends AppCompatActivity {
         super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
     }
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -223,10 +226,20 @@ public class FilterSearchResultActivity extends AppCompatActivity {
             adapter.setOnItemClickListener(new RvOnClickListener() {
                 @Override
                 public void onItemClick(int position) {
-                    String jobId = mListItem.get(position).getId();
+
+                }
+
+                @Override
+                public void onItemClick(int position, ItemJob itemJob) {
+                    String jobId =itemJob.getId();
                     Intent intent = new Intent(FilterSearchResultActivity.this, JobDetailsActivity.class);
                     intent.putExtra("Id", jobId);
                     startActivity(intent);
+                }
+
+                @Override
+                public void onItemClick(int position, ItemCategory itemJob) {
+
                 }
             });
 
